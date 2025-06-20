@@ -1,0 +1,34 @@
+# Multi-Agent TODO App Development System Dependencies
+
+# Core dependencies for async operations and data handling
+# asyncio-throttle==1.0.2  # Currently not used in codebase
+
+# Logging and monitoring
+structlog==23.2.0
+
+# YAML configuration parsing
+PyYAML>=6.0
+
+# File handling and path operations (pathlib is built-in for Python 3.4+)
+# pathlib2==2.3.7; python_version < "3.4"  # Removed - using built-in pathlib
+
+# Optional: Enhanced JSON handling
+orjson==3.9.10
+
+# Optional: Progress bars for long operations
+tqdm==4.66.1
+
+# Optional: Rich console output
+rich==13.7.0
+
+# Development dependencies (optional)
+# pytest==7.4.3
+# pytest-asyncio==0.21.1
+# black==23.11.0
+# flake8==6.1.0
+# mypy==1.7.1
+
+# Note: 
+# - Claude Code CLI must be installed separately
+# - ANTHROPIC_API_KEY environment variable must be set
+# - Python 3.8+ required

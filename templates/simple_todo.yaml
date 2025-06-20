@@ -1,0 +1,378 @@
+# Simple Todo Application Template
+# Python Flask + SQLite を使用したシンプルなToDoアプリ
+
+project:
+  name: "Simple Todo Application"
+  description: "Python Flask + SQLite を使用したシンプルなToDoアプリケーション"
+  technology_stack:
+    - "Python 3.11"
+    - "Flask"
+    - "SQLite3"
+    - "Bootstrap 5"
+    - "Jinja2 Templates"
+    - "REST API"
+  
+workflow:
+  phases:
+    - phase: "planning"
+      agent: "pm"
+      dependencies: []
+      parallel: false
+      
+    - phase: "api_design"
+      agent: "ui_designer"
+      dependencies: ["planning"]
+      parallel: false
+      
+    - phase: "development"
+      agent: "python_developer"
+      dependencies: ["api_design"]
+      parallel: false
+      
+    - phase: "testing"
+      agent: "tester"
+      dependencies: ["development"]
+      parallel: false
+      
+    - phase: "security_audit"
+      agent: "security_engineer"
+      dependencies: ["testing"]
+      parallel: false
+
+agents:
+  pm:
+    role: "Product Manager"
+    expertise:
+      - "プロジェクト計画"
+      - "要件定義"
+      - "ユーザーストーリー作成"
+    
+  ui_designer:
+    role: "UI/UX Designer & API Designer"
+    expertise:
+      - "API設計"
+      - "データベース設計"
+      - "UI/UX設計"
+      - "RESTful API設計"
+    
+  python_developer:
+    role: "Python Developer"
+    expertise:
+      - "Flask アプリケーション開発"
+      - "SQLite データベース実装"
+      - "REST API実装"
+      - "Jinja2 テンプレート開発"
+    
+  tester:
+    role: "QA Engineer"
+    expertise:
+      - "API テスト"
+      - "フロントエンドテスト"
+      - "統合テスト"
+      - "ユーザビリティテスト"
+    
+  security_engineer:
+    role: "Security Engineer"
+    expertise:
+      - "API セキュリティ監査"
+      - "XSS/CSRF対策"
+      - "認証・認可の検証"
+      - "データ保護"
+
+tasks:
+  planning:
+    agent: "pm"
+    title: "ToDoアプリ要件定義・プロジェクト計画"
+    prompt: |
+      シンプルなToDoアプリケーションの要件定義とプロジェクト計画を作成してください。
+
+      【プロジェクト概要】
+      - Python Flask + SQLite を使用したシンプルなToDoアプリ
+      - 個人利用向けのシンプルな機能
+      - 学習・ポートフォリオ目的
+
+      【作成してください】
+      1. **機能要件**
+         - 必須機能（CRUD操作）
+         - 追加機能（優先度、期限、カテゴリなど）
+         - 除外機能（複雑すぎる機能）
+
+      2. **非機能要件**
+         - パフォーマンス要件
+         - セキュリティ要件
+         - 使いやすさ要件
+
+      3. **ユーザーストーリー**
+         - メインユーザーペルソナ
+         - 主要なユーザーシナリオ
+         - 受け入れ条件
+
+      4. **技術選定理由**
+         - Flask: Webフレームワークの理由
+         - Jinja2: テンプレートエンジンの理由
+         - SQLite: データベースの理由
+
+      5. **プロジェクト計画**
+         - 開発フェーズ
+         - 成果物リスト
+         - 品質基準
+
+      実用的で実装可能な要件にしてください。
+    output_files:
+      - "PROJECT_REQUIREMENTS.md"
+    context_files: []
+
+  api_design:
+    agent: "ui_designer"
+    title: "API設計・データベース設計・UI設計"
+    prompt: |
+      ToDoアプリのAPI設計、データベース設計、UI設計を行ってください。
+
+      【参考情報】
+      - プロジェクト要件を確認して設計に反映してください
+      - シンプルで拡張しやすい設計を心がけてください
+
+      【作成してください】
+
+      1. **データベース設計 (database_schema.sql)**
+         - todosテーブル設計
+         - 必要に応じてカテゴリテーブル
+         - インデックス設計
+         - 初期データ
+
+      2. **REST API設計 (api_specification.md)**
+         ```
+         GET    /api/todos          - Todo一覧取得
+         POST   /api/todos          - Todo作成
+         PUT    /api/todos/:id      - Todo更新
+         DELETE /api/todos/:id      - Todo削除
+         GET    /api/todos/:id      - Todo詳細取得
+         ```
+         - リクエスト/レスポンス形式
+         - エラーハンドリング
+         - バリデーションルール
+
+      3. **UI設計 (ui_design.md)**
+         - ワイヤーフレーム（テキストベース）
+         - HTMLテンプレート設計
+         - Bootstrap コンポーネント利用
+         - レスポンシブ対応
+
+      4. **技術アーキテクチャ (architecture.md)**
+         - Flask アプリケーション構成
+         - Jinja2 テンプレート構成
+         - データフロー
+         - ディレクトリ構造
+
+      実装しやすく、メンテナンスしやすい設計にしてください。
+    output_files:
+      - "database_schema.sql"
+      - "api_specification.md"
+      - "ui_design.md"
+      - "architecture.md"
+    context_files:
+      - "PROJECT_REQUIREMENTS.md"
+
+  development:
+    agent: "python_developer"
+    title: "Flask ToDoアプリ開発"
+    prompt: |
+      ToDoアプリのFlask アプリケーションを開発してください。
+
+      【参考情報】
+      - API仕様とデータベース設計を参考にしてください
+      - Flask + SQLite3 + Bootstrap 5 を使用してください
+      - Jinja2 テンプレートでUIを作成してください
+
+      【実装してください】
+
+      1. **プロジェクト構成 (requirements.txt)**
+         - Flask, SQLite3等の依存関係
+         - Pythonバージョン指定
+
+      2. **メインアプリケーション (app.py)**
+         - Flask アプリケーション設定
+         - データベース初期化
+         - ルーティング設定
+         - エラーハンドリング
+
+      3. **データベース関連**
+         - models/todo.py: Todoモデル
+         - database.py: データベース接続・初期化
+         - schema.sql: テーブル定義
+
+      4. **APIルート (routes/)**
+         - routes/api.py: REST API エンドポイント
+         - routes/main.py: Webページルート
+         - JSON レスポンス対応
+         - バリデーション
+
+      5. **Jinja2 テンプレート (templates/)**
+         - templates/base.html: ベーステンプレート
+         - templates/index.html: メインページ
+         - templates/todo_list.html: Todo一覧
+         - Bootstrap 5 スタイリング
+
+      6. **静的ファイル (static/)**
+         - static/css/style.css: カスタムスタイル
+         - static/js/app.js: フロントエンド JavaScript
+         - Bootstrap 5 CDN利用
+
+      7. **設定ファイル**
+         - config.py: アプリケーション設定
+         - .env.example: 環境変数例
+
+      8. **実行手順 (README.md)**
+         - セットアップ手順
+         - 実行方法
+         - 機能説明
+
+      完全に動作するFlask ToDoアプリを作成してください。
+    output_files:
+      - "app.py"
+      - "requirements.txt"
+      - "config.py"
+      - "database.py"
+      - "schema.sql"
+      - "models/todo.py"
+      - "routes/api.py"
+      - "routes/main.py"
+      - "templates/base.html"
+      - "templates/index.html"
+      - "templates/todo_list.html"
+      - "static/css/style.css"
+      - "static/js/app.js"
+      - ".env.example"
+      - "README.md"
+    context_files:
+      - "PROJECT_REQUIREMENTS.md"
+      - "api_specification.md"
+      - "database_schema.sql"
+      - "ui_design.md"
+      - "architecture.md"
+
+  testing:
+    agent: "tester"
+    title: "ToDoアプリのテスト・品質保証"
+    prompt: |
+      ToDoアプリの包括的なテストを実施してください。
+
+      【テスト対象】
+      - Flask アプリケーション
+      - REST API エンドポイント
+      - Webページ機能
+      - データベース連携
+
+      【実施してください】
+
+      1. **Flask APIテスト**
+         - 全APIエンドポイントのテスト
+         - 正常系・異常系テスト
+         - バリデーションテスト
+         - データベース整合性確認
+
+      2. **Webページテスト**
+         - テンプレートレンダリング確認
+         - フォーム送信テスト
+         - レスポンシブデザイン
+         - ブラウザ互換性
+
+      3. **統合テスト**
+         - API⇄Webページ連携
+         - データフロー確認
+         - エラーハンドリング
+
+      4. **ユーザビリティテスト**
+         - UI/UX の使いやすさ
+         - アクセシビリティチェック
+         - パフォーマンス確認
+
+      5. **テストケース作成**
+         - 手動テストケース
+         - 自動テストスクリプト（可能であれば）
+         - テストデータ
+
+      【作成してください】
+      - TEST_PLAN.md: テスト計画
+      - TEST_CASES.md: 詳細テストケース
+      - TEST_REPORT.md: テスト結果報告
+      - BUGS_FOUND.md: 発見したバグリスト（あれば）
+
+      発見したバグや改善点は具体的に報告してください。
+    output_files:
+      - "TEST_PLAN.md"
+      - "TEST_CASES.md" 
+      - "TEST_REPORT.md"
+      - "BUGS_FOUND.md"
+    context_files:
+      - "PROJECT_REQUIREMENTS.md"
+      - "api_specification.md"
+      - "ui_design.md"
+      - "README.md"
+
+  security_audit:
+    agent: "security_engineer"
+    title: "ToDoアプリのセキュリティ監査"
+    prompt: |
+      ToDoアプリのセキュリティ監査を実施してください。
+
+      【監査対象】
+      - Flask アプリケーション
+      - REST API エンドポイント
+      - Jinja2 テンプレート
+      - データベース（SQLite）
+      - 全体的なセキュリティ設計
+
+      【セキュリティチェック項目】
+
+      1. **Flask セキュリティ**
+         - SQLインジェクション対策
+         - XSS（クロスサイトスクリプティング）対策
+         - CSRF（クロスサイトリクエストフォージェリ）対策
+         - 入力値検証・サニタイゼーション
+         - Flask-WTF セキュリティ機能
+
+      2. **認証・認可**
+         - 認証機能の必要性評価
+         - セッション管理
+         - Flask-Login活用
+         - パスワード処理（実装されている場合）
+
+      3. **データ保護**
+         - 機密データの暗号化
+         - SQLite データベースセキュリティ
+         - ログ出力における機密情報の漏洩
+
+      4. **テンプレートセキュリティ**
+         - Jinja2 テンプレートXSS対策
+         - Content Security Policy
+         - 安全でないHTML出力のチェック
+
+      5. **インフラ・設定**
+         - HTTPS設定推奨
+         - 環境変数の管理
+         - エラーメッセージの情報漏洩
+         - Flask 本番環境設定
+
+      6. **依存関係セキュリティ**
+         - Python パッケージの脆弱性チェック
+         - Flask バージョンの安全性
+
+      【作成してください】
+      - SECURITY_AUDIT.md: セキュリティ監査報告書
+      - SECURITY_RECOMMENDATIONS.md: セキュリティ改善提案
+      - SECURITY_CHECKLIST.md: セキュリティチェックリスト
+
+      実用的で実装可能なセキュリティ対策を提案してください。
+    output_files:
+      - "SECURITY_AUDIT.md"
+      - "SECURITY_RECOMMENDATIONS.md"
+      - "SECURITY_CHECKLIST.md"
+    context_files:
+      - "PROJECT_REQUIREMENTS.md"
+      - "api_specification.md"
+      - "architecture.md"
+      - "app.py"
+      - "routes/api.py"
+      - "templates/base.html"
+      - "TEST_REPORT.md"
