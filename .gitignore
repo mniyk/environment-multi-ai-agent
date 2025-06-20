@@ -32,11 +32,8 @@ ENV/
 *.swp
 *.swo
 
-# Logs
-*.log
-logs/
-todo_project_output/
-todo_project_*/
+# Note: Including logs as examples of system output
+# todo_project_output/ and its logs are included as example output
 
 # OS
 .DS_Store

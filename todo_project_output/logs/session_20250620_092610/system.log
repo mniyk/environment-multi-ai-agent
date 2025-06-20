@@ -1,0 +1,58 @@
+2025-06-20 09:26:10,515 - core.log_manager - INFO - Log session started: 20250620_092610
+2025-06-20 09:26:10,529 - core.agent_loader - INFO - Discovered 5 agent definitions: ['python_developer', 'tester', 'security_engineer', 'ui_designer', 'pm']
+2025-06-20 09:26:10,532 - core.agent_loader - INFO - Successfully loaded agent definition: pm
+2025-06-20 09:26:10,535 - core.agent_loader - INFO - Successfully loaded agent definition: python_developer
+2025-06-20 09:26:10,541 - core.agent_loader - INFO - Successfully loaded agent definition: security_engineer
+2025-06-20 09:26:10,546 - core.agent_loader - INFO - Successfully loaded agent definition: tester
+2025-06-20 09:26:10,549 - core.agent_loader - INFO - Successfully loaded agent definition: ui_designer
+2025-06-20 09:26:10,549 - core.template_loader - INFO - Successfully loaded template: simple_todo
+2025-06-20 09:26:10,549 - core.agent_loader - INFO - Discovered 5 agent definitions: ['python_developer', 'tester', 'security_engineer', 'ui_designer', 'pm']
+2025-06-20 09:26:10,549 - core.template_loader - INFO - Created 5 tasks from template
+2025-06-20 09:26:10,550 - core.agent_loader - INFO - Discovered 5 agent definitions: ['python_developer', 'tester', 'security_engineer', 'ui_designer', 'pm']
+2025-06-20 09:26:10,550 - core.log_manager - INFO - [template_loader] Template loaded successfully: simple_todo
+2025-06-20 09:26:10,550 - core.log_manager - INFO - [orchestrator] Multi-agent system initialized
+2025-06-20 09:26:10,550 - core.log_manager - INFO - [orchestrator] Starting workflow execution for project: Simple Todo Application
+2025-06-20 09:26:10,550 - core.orchestrator - INFO - Executing phase: planning
+2025-06-20 09:26:10,551 - core.agent_loader - INFO - Discovered 5 agent definitions: ['python_developer', 'tester', 'security_engineer', 'ui_designer', 'pm']
+2025-06-20 09:26:10,553 - core.agent_loader - INFO - Successfully loaded agent definition: pm
+2025-06-20 09:29:57,491 - core.log_manager - INFO - [claude_conversation_pm] Claude conversation logged for task pm_planning
+2025-06-20 09:29:57,495 - core.agent.pm - INFO - Task pm_planning completed successfully
+2025-06-20 09:29:57,495 - core.orchestrator - INFO - Executing phase: api_design
+2025-06-20 09:29:57,497 - core.agent_loader - INFO - Discovered 5 agent definitions: ['python_developer', 'tester', 'security_engineer', 'ui_designer', 'pm']
+2025-06-20 09:29:57,501 - core.agent_loader - INFO - Successfully loaded agent definition: pm
+2025-06-20 09:29:57,510 - core.agent_loader - INFO - Successfully loaded agent definition: python_developer
+2025-06-20 09:29:57,527 - core.agent_loader - INFO - Successfully loaded agent definition: security_engineer
+2025-06-20 09:29:57,531 - core.agent_loader - INFO - Successfully loaded agent definition: tester
+2025-06-20 09:29:57,534 - core.agent_loader - INFO - Successfully loaded agent definition: ui_designer
+2025-06-20 09:33:11,288 - core.agent.ui_designer - ERROR - Error in Claude Code SDK query: unhandled errors in a TaskGroup (1 sub-exception)
+2025-06-20 09:33:11,290 - core.agent.ui_designer - WARNING - Claude Code SDK failed: unhandled errors in a TaskGroup (1 sub-exception), using fallback
+2025-06-20 09:33:11,291 - core.log_manager - INFO - [claude_conversation_ui_designer] Claude conversation logged for task ui_designer_api_design
+2025-06-20 09:33:11,295 - core.agent.ui_designer - INFO - Task ui_designer_api_design completed successfully
+2025-06-20 09:33:11,296 - core.orchestrator - INFO - Executing phase: development
+2025-06-20 09:33:11,298 - core.agent_loader - INFO - Discovered 5 agent definitions: ['python_developer', 'tester', 'security_engineer', 'ui_designer', 'pm']
+2025-06-20 09:33:11,302 - core.agent_loader - INFO - Successfully loaded agent definition: pm
+2025-06-20 09:33:11,308 - core.agent_loader - INFO - Successfully loaded agent definition: python_developer
+2025-06-20 09:41:48,502 - core.agent.python_developer - ERROR - Error in Claude Code SDK query: unhandled errors in a TaskGroup (1 sub-exception)
+2025-06-20 09:41:48,503 - core.agent.python_developer - WARNING - Claude Code SDK failed: unhandled errors in a TaskGroup (1 sub-exception), using fallback
+2025-06-20 09:41:48,507 - core.log_manager - INFO - [claude_conversation_python_developer] Claude conversation logged for task python_developer_development
+2025-06-20 09:41:48,514 - core.agent.python_developer - INFO - Task python_developer_development completed successfully
+2025-06-20 09:41:48,614 - core.orchestrator - INFO - Executing phase: testing
+2025-06-20 09:41:48,616 - core.agent_loader - INFO - Discovered 5 agent definitions: ['python_developer', 'tester', 'security_engineer', 'ui_designer', 'pm']
+2025-06-20 09:41:48,620 - core.agent_loader - INFO - Successfully loaded agent definition: pm
+2025-06-20 09:41:48,626 - core.agent_loader - INFO - Successfully loaded agent definition: python_developer
+2025-06-20 09:41:48,631 - core.agent_loader - INFO - Successfully loaded agent definition: security_engineer
+2025-06-20 09:41:48,636 - core.agent_loader - INFO - Successfully loaded agent definition: tester
+2025-06-20 09:42:17,769 - core.agent.tester - ERROR - Error in Claude Code SDK query: unhandled errors in a TaskGroup (1 sub-exception)
+2025-06-20 09:42:17,770 - core.agent.tester - WARNING - Claude Code SDK failed: unhandled errors in a TaskGroup (1 sub-exception), using fallback
+2025-06-20 09:42:17,770 - core.log_manager - INFO - [claude_conversation_tester] Claude conversation logged for task tester_testing
+2025-06-20 09:42:17,773 - core.agent.tester - INFO - Task tester_testing completed successfully
+2025-06-20 09:42:17,773 - core.orchestrator - INFO - Executing phase: security_audit
+2025-06-20 09:42:17,774 - core.agent_loader - INFO - Discovered 5 agent definitions: ['python_developer', 'tester', 'security_engineer', 'ui_designer', 'pm']
+2025-06-20 09:42:17,779 - core.agent_loader - INFO - Successfully loaded agent definition: pm
+2025-06-20 09:42:17,784 - core.agent_loader - INFO - Successfully loaded agent definition: python_developer
+2025-06-20 09:42:17,788 - core.agent_loader - INFO - Successfully loaded agent definition: security_engineer
+2025-06-20 09:43:16,369 - core.agent.security_engineer - ERROR - Error in Claude Code SDK query: unhandled errors in a TaskGroup (1 sub-exception)
+2025-06-20 09:43:16,371 - core.agent.security_engineer - WARNING - Claude Code SDK failed: unhandled errors in a TaskGroup (1 sub-exception), using fallback
+2025-06-20 09:43:16,372 - core.log_manager - INFO - [claude_conversation_security_engineer] Claude conversation logged for task security_engineer_security_audit
+2025-06-20 09:43:16,374 - core.agent.security_engineer - INFO - Task security_engineer_security_audit completed successfully
+2025-06-20 09:43:16,375 - core.log_manager - INFO - [orchestrator] Workflow execution completed successfully

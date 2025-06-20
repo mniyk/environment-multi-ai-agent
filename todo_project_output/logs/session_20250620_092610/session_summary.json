@@ -1,0 +1,21 @@
+{
+  "session_id": "20250620_092610",
+  "start_time": "2025-06-20T09:26:10.550899",
+  "end_time": "2025-06-20T09:43:16.374253",
+  "total_execution_time_seconds": 1025.71624,
+  "total_tasks": 5,
+  "successful_tasks": 5,
+  "failed_tasks": 0,
+  "success_rate": 1.0,
+  "agents_involved": [
+    "pm",
+    "ui_designer",
+    "tester",
+    "python_developer",
+    "security_engineer"
+  ],
+  "total_artifacts_created": 40,
+  "total_interactions": 9,
+  "error_count": 0,
+  "claude_code_commands_count": 5
+}
